@@ -1,7 +1,7 @@
 {
-  "name": "journalappbackend",
+  "name": "noteit",
   "version": "1.0.0",
-  "description": "This is a backend for the journal app",
+  "description": "This is a backend for the note-it app",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
