@@ -28,6 +28,7 @@ connection.once('open', () => {
 
 require('./routes/api/auth/auth.routes')(app);
 require('./routes/api/posts/posts.routes')(app);
+require('./routes/api/quotes/quotes.routes')(app);
 
 app.listen(PORT, () => {
   console.log(`Server Running on port: ${PORT}`);
