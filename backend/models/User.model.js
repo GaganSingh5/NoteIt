@@ -9,6 +9,7 @@ const userSchema = new Schema({
   firstname: {
     type: String,
     lowercase: true,
+    unique: false,
     required: [true, "can't be blank"],
     match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
     index: true,
@@ -16,6 +17,7 @@ const userSchema = new Schema({
   lastname: {
     type: String,
     lowercase: true,
+    unique: false,
     required: [true, "can't be blank"],
     match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
     index: true,
