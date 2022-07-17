@@ -6,22 +6,31 @@ exports.signUp = function (req, res) {
     username, email, password, firstname, lastname,
   } = req.body;
 
-  const newUser = new User({
-    firstname,
-    lastname,
-    username,
-    email,
-  });
-  newUser.generateHash(password);
-
-  newUser.save()
-    .then(() => res.status(201).json({ statusCode: 201, description: 'Sign Up Success', status: 'Created' }))
-    .catch(((err) => res.status(500).json({
-      statusCode: 500,
-      description: 'Error occured will processing request',
-      status: 'Internal Server Error',
-      error: err,
-    })));
+  User.init().then(() => {
+    const newUser = new User({
+      firstname,
+      lastname,
+      username,
+      email,
+    });
+    newUser.generateHash(password);
+    newUser.save()
+      .then(() => res.status(201).json({
+        statusCode: 201,
+        description: 'Sign Up Success',
+        status: 'Created',
+      })).catch((err) => res.status(500).json({
+        statusCode: 500,
+        description: 'Error occured will processing request',
+        status: 'Internal Server Error',
+        error: err,
+      }));
+  }).catch((err) => res.status(500).json({
+    statusCode: 500,
+    description: 'Error occured will processing request',
+    status: 'Internal Server Error',
+    error: err,
+  }));
 };
 
 exports.signIn = async function (req, res) {
