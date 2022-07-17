@@ -12,7 +12,7 @@ const userSchema = new Schema({
     unique: false,
     required: [true, "can't be blank"],
     match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
-    index: true,
+    index: [true, 'index error'],
   },
   lastname: {
     type: String,
