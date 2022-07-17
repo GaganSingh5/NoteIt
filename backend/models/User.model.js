@@ -9,7 +9,6 @@ const userSchema = new Schema({
   firstname: {
     type: String,
     lowercase: true,
-    unique: true,
     required: [true, "can't be blank"],
     match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
     index: true,
@@ -17,7 +16,6 @@ const userSchema = new Schema({
   lastname: {
     type: String,
     lowercase: true,
-    unique: true,
     required: [true, "can't be blank"],
     match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
     index: true,
@@ -25,7 +23,7 @@ const userSchema = new Schema({
   username: {
     type: String,
     lowercase: true,
-    unique: true,
+    unique: [true, "should be unique"],
     required: [true, "can't be blank"],
     match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
     index: true,
@@ -33,7 +31,7 @@ const userSchema = new Schema({
   email: {
     type: String,
     lowercase: true,
-    unique: true,
+    unique: [true, "should be unique"],
     required: [true, "can't be blank"],
     match: [/\S+@\S+\.\S+/, 'is invalid'],
     index: true,
