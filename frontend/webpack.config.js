@@ -8,7 +8,7 @@ module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
     plugins: [new ESLintPlugin(), new webpack.ProvidePlugin({
         process: 'process/browser'
-    }), new Dotenv()],
+    }), new Dotenv({ systemvars:true })],
     module: {
         rules: [
             {
