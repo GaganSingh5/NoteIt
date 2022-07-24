@@ -8,7 +8,9 @@ import {
 } from "react-router-dom";
 import { AuthProvider } from './Context/AuthProvider';
 
-
+if (process.env.NODE_ENV !== "development") {
+    console.log = () => {};
+}
 const container = document.getElementById('app');
 const root = createRoot(container);
 root.render(
