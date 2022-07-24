@@ -35,8 +35,8 @@ module.exports = {
         extensions: ['.js', '.jsx', '.react.js', '.ts', '.tsx']
     },
     output: {
-        path: path.resolve(__dirname, '/dist'),
-        publicPath: '/',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist/',
         filename: 'bundle.js'
     },
     devServer: {
