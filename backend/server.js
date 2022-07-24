@@ -4,7 +4,7 @@ const { default: mongoose } = require('mongoose');
 require('dotenv').config();
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://noteit--app.herokuapp.com',
   credentials: true,
 };
 const PORT = process.env.PORT || 5000;
