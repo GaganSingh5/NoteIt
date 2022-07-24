@@ -5,13 +5,14 @@ require('dotenv').config();
 
 const corsOptions = {
   origin: 'http://localhost:3000',
+  credentials: true,
 };
 const PORT = process.env.PORT || 5000;
 const mongooseURI = process.env.ATLAS_URI;
 
 const app = express();
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true,

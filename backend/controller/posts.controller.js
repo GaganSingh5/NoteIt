@@ -34,6 +34,8 @@ exports.addPost = async function (req, res) {
     description: '',
   };
 
+  console.log(req.body);
+
   const {
     title, content, coverUrl,
   } = req.body;

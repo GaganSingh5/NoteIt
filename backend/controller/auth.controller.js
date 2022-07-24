@@ -34,6 +34,7 @@ exports.signUp = function (req, res) {
 };
 
 exports.signIn = async function (req, res) {
+  console.log(req);
   const {
     username, password, email,
   } = req.body;
@@ -67,10 +68,19 @@ exports.signIn = async function (req, res) {
       accessToken: token,
       username: userData.username,
       email: userData.email,
+      firstname: userData.firstname,
     });
     return res.status(200).json({
-      userId: _id, accessToken: token, username: userData.username, email: userData.email,
+      userId: _id,
+      accessToken: token,
+      username: userData.username,
+      email: userData.email,
+      firstname: userData.firstname,
     });
   }
-  return res.status(404);
+  return res.status(401).json({
+    statusCode: 401,
+    error: 'Unauthorized',
+    description: 'Invalid Username or Password',
+  });
 };
