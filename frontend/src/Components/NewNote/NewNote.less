@@ -1,0 +1,229 @@
+.note-container {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  flex-direction: column;
+}
+
+.note-new-card {
+  min-width: 80%;
+  max-width: 80%;
+  min-height: 70vh;
+  max-height: 70vh;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  // flex: 1 0 auto;
+  outline: none;
+  border: 2px solid #aaaaaa;
+  border-radius: 15px;
+}
+
+.note-new-card {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.note-new-card::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+// .note-card::-webkit-scrollbar {
+//   display: none;
+// }
+
+.note-title-container {
+  padding: 2em;
+}
+
+.note-title {
+  margin: 1em auto 0.5em auto;
+  // border: 2px solid black;
+}
+
+.note-title > textarea {
+  border: 0;
+  background-color: transparent;
+  color: black;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  resize: none;
+  white-space: pre-wrap;
+  font-size: 3em;
+  font-weight: 700;
+  min-height: 1.25em;
+  max-height: 1.25em;
+  display: inline-table;
+}
+.note-title > textarea::placeholder {
+  // font-size: 3em;
+  // font-weight: 800;
+  // overflow-wrap: break-word;
+  border: 0;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  resize: none;
+  white-space: pre-wrap;
+  // font-size: 3em;
+  // font-weight: 700;
+  min-height: 1.25em;
+  max-height: 1.25em;
+  display: inline-table;
+}
+
+@media only screen and (max-width: 670px) {
+  .note-title > textarea {
+    min-height: 2.25em;
+    max-height: 2.25em;
+  }
+}
+
+@media only screen and (max-width: 423px) {
+  .note-title > textarea {
+    min-height: 5em;
+    max-height: 5em;
+  }
+}
+
+.note-title > textarea:focus {
+  outline: none;
+}
+
+.note-toolbar {
+  position: sticky;
+  overflow: visible;
+  margin: 0 -2em 1em -2em;
+  overflow-x: scroll;
+  top: 0;
+  z-index: 2;
+}
+
+.note-toolbar > div {
+  // display: inline-flex;
+  background-color: #fefbf3;
+  border: 0;
+}
+
+.note-toolbar > div > div {
+  display: inline-flex;
+  background-color: #fefbf3;
+  padding: 0 2em 0 2em;
+}
+
+.note-toolbar > div > div button {
+  height: auto;
+
+}
+
+.note-toolbar::-webkit-scrollbar {
+  display: none;
+}
+
+.note-content-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  // flex: 1 0 auto;
+  outline: none;
+  padding: 2em;
+  padding-top: 0;
+  flex: 1;
+  
+}
+
+.note-content {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  // border: 2px solid black;
+  font-size: 1.5em;
+  padding: 0.5em;
+  min-height: 5.5em;
+  flex: 1;
+    border: 2px solid #aaaaaa;
+  border-radius: 15px;
+}
+
+.cover-image input {
+  display: none;
+}
+
+.cover-image label {
+  outline: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #3fa7d6;
+  border: 0px;
+  font-size: medium;
+  color: #fefbf3;
+  display: inline-flex;
+  text-align: center;
+}
+
+.cover-image label:hover {
+  background-color: #2d799c;
+}
+
+
+.note-submit {
+  min-width: 80%;
+  max-width: 80%;
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+// .note-submit > button:hover {
+//   background-color: #2d799c;
+// }
+
+
+
+.note-error {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: #FF7171;
+  color: #FEFBF3;
+  border-radius: 5px;
+  min-width: calc(100% -0.5em);
+  // transition: all 0.2s linear ;
+  opacity: 0;
+  animation: popUp 0.2s linear forwards;
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    max-height: 0em;
+  }
+  to {
+    opacity: 1;
+    max-height: 4em;
+
+  }
+}
+
+
+
+// Colors
+@bg-color: hsl(256,33,10);
+@dot-color: hsl(256,33,70);
+
+// Dimensions
+@dot-size: 1px;
+@dot-space: 22px;
+
+.noteit-dot-pattern {
+	background:
+		linear-gradient(90deg, @bg-color (@dot-space - @dot-size), transparent 1%) center,
+		linear-gradient(@bg-color (@dot-space - @dot-size), transparent 1%) center,
+		@dot-color;
+	background-size: @dot-space @dot-space;
+}

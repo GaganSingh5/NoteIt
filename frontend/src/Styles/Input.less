@@ -1,0 +1,45 @@
+
+
+input {
+  background-color: #F9F9F9;
+  border: 1px solid #AAAAAA;
+  border-bottom: 3px solid #AAAAAA;
+  color: #435560;
+  border-radius: 15px;
+  outline: none;
+  min-width: 100%;
+  padding: 1rem;
+  margin: 0.5rem auto 0.5rem auto;
+  font-size: medium;
+  font-weight: 600;
+  transition: all 0.3s linear;
+}
+
+input::placeholder {
+  color: #AAAAAA;
+  font-weight: 600;
+}
+
+input:focus {
+  border: 1px solid #b983ff;
+  border-bottom: 3px solid #b983ff;
+  font-weight: 600;
+  color: #435560;
+}
+
+input:disabled {
+  background-color: #cccccc;
+  border: 1px solid #F9F9F9;
+  color: #666666;
+  border-bottom: 3px solid #666666;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.disabled-link {
+  pointer-events: none;
+}
