@@ -24,7 +24,7 @@ Below are the steps you need to follow to run code locally:
 - Fork the code 
 -- backend folder: This folder contain the backend nodejs code.
 -- frontend folder: This folder contain the frontend react code.
-- Create an `.env` file and update the properties using the given `.env.example` in code
+- Create an `.env` file under frontend and backend folder, update the properties using the given `.env.example` in code
 - Do a npm install in both backend and frontend code.
     ```sh
     npm install
